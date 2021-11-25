@@ -2,3 +2,12 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* The way we access base class of the app is we say at @layerbase */
+
+@layer base {
+  body {
+    /* custom color => you've got to use the just in time compiler  it tells the jit just before it runs apply this style*/
+    @apply bg-[#06202A] text-gray-300;
+  }
+}

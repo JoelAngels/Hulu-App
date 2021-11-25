@@ -42,3 +42,10 @@ npm install -D tailwindcss@latest postcss@latest autoprefixer@latest
 npx tailwindcss init -p => this will create 2 files for us, the tailwind config and the postcss config
 
 ## Next step is adding the nextjs files
+
+The lighter your app is the better.
+
+## Installed hero icons
+
+this is made with tailwind css, this are beautiful svg, svf means scalable vector graphics, doesn't matter how you resize it will never pixelate
+when using tailwind css, you must remember that it is mobile first
