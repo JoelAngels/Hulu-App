@@ -1,3 +1,5 @@
+//sm:w-20 means when we reach the small breakpoint, change the width to 20
+
 import React from "react";
 
 function HeaderItem({ title, Icon }) {
