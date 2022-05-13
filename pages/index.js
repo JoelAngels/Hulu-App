@@ -3,9 +3,11 @@ import Image from "next/image";
 import Header from "../components/Header";
 import Nav from "../components/Nav";
 import Results from "../components/Results";
+import requests from "../utils/requests";
 
 //this is what get rendered on the client
-export default function Home() {
+export default function Home(props) {
+  console.log(props);
   return (
     <div>
       <Head>
@@ -29,5 +31,18 @@ export default function Home() {
 export async function getServerSideProps(context) {
   //now lets pull out the genre from the url;
   const genre = context.query.genre;
-  //make a request to the tmdb database
+  //make a request to the tmdb database after adding api in my environment
+  const request = await fetch(
+    `https://api.themoviedb.org/3${
+      requests[genre]?.url || requests.fetchTrending.url
+    }`
+  ).then((res) => res.json());
+
+  //now it rendered as a sever, now lets return it as a prop to our component
+
+  return {
+    props: {
+      results: request.results,
+    },
+  };
 }
